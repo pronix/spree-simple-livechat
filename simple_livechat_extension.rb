@@ -10,7 +10,7 @@ class SimpleLivechatExtension < Spree::Extension
 
   def self.require_gems(config)
     config.gem 'easy-gtalk-bot'
-    config.gem "daemon-spawn", :lib => "daemon-spawn"
+    config.gem "daemon-spawn", :lib => "daemon-spawn", :version => '= 0.2.0'
     config.gem "daemons"
     config.gem 'eventmachine', :version => '0.12.10'
     config.gem "json"
