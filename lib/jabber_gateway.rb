@@ -2,6 +2,8 @@
 class JabberGateway < EM::Connection
   class << self
     def start
+      ActiveRecord::Base.establish_connection
+      ActiveRecord::Base.verify_active_connections!
       @bot = GTalk::Bot.new(:email => Spree::Config.get("jabber_account"), :password => Spree::Config.get("jabber_password"))
       @bot.get_online
       loop do
@@ -15,6 +17,9 @@ class JabberGateway < EM::Connection
               @user = message['user']
               @msg = message['msg']
               puts "[#{ @user }]: #{ message['msg'] }"
+
+              ActiveRecord::Base.establish_connection
+              ActiveRecord::Base.verify_active_connections!
               [Spree::Config.get("support_jabber_account").split(',')].each do |gaccount|
                 @bot.message gaccount , "##{@user}: #{@msg}"
               end
