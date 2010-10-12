@@ -23,10 +23,10 @@
 
 После установки необходимо добвать следующие js и css файлы
 -----------------------------------------------------------
- stylesheet_link_tag "chat"
- javascript_include_tag 'jquery'
- javascript_include_tag 'chat'
- javascript_include_tag 'faye.js', - файл js от faye, путь указывает на сервер faye
+stylesheet_link_tag "chat"
+javascript_include_tag 'jquery'
+javascript_include_tag 'chat'
+javascript_include_tag 'faye.js', - файл js от faye, путь указывает на сервер faye
 
 Для создание формы чата необходимо
 -----------------------------------
