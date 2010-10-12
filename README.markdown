@@ -28,8 +28,8 @@
     javascript_include_tag 'chat'
     javascript_include_tag 'faye.js', - файл js от faye, путь указывает на сервер faye
 
-Для создание формы чата необходимо
------------------------------------
+Для создание формы чата необходимо в layout прописать:
+------------------------------------------------------
   <script type="text/javascript">
     //  Faye.Logging.logLevel = 'debug';
     //  Faye.logger = function(message) { console.log(message);  };
