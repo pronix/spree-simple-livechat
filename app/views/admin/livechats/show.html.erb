@@ -1,0 +1,26 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("livechat_settings") %></h1>
+
+<table>
+  <tr>
+    <th scope="row"><%= t("jabber_account") %>:</th>
+    <td><%=  Spree::Config[:jabber_account] %></td>
+  </tr>
+
+    <tr>
+    <th scope="row"><%= t("jabber_password") %>:</th>
+    <td><%=  Spree::Config[:jabber_password] %></td>
+  </tr>
+
+  <tr>
+    <th scope="row"><%= t("support_jabber_account") %>:</th>
+    <td><%=  Spree::Config[:support_jabber_account] %></td>
+  </tr>
+
+
+</table>
+
+<p><%= link_to_with_icon 'edit', t("edit"), edit_admin_livechats_path %></p>
+
+

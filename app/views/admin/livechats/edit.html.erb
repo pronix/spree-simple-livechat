@@ -1,0 +1,25 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t('livechat_settings') %></h1>
+
+<% form_tag(admin_livechats_path, :method => :put) do %>
+
+  <p>
+	<label><%= t('jabber_account') %></label>
+	<%= text_field_tag('preferences[jabber_account]', Spree::Config[:jabber_account])%>
+  </p>
+  <p>
+	<label><%= t('jabber_password') %></label>
+	<%= text_field_tag('preferences[jabber_password]', Spree::Config[:jabber_password])%>
+  </p>
+  <p>
+	<label><%= t('support_jabber_account') %></label>
+	<%= text_field_tag('preferences[support_jabber_account]', Spree::Config[:support_jabber_account])%>
+  </p>
+
+
+  <p class="form-buttons">
+    <%= button t('update') %>
+    <%= t("or") %> <%= link_to t("cancel"), admin_livechats_url %>
+  </p>
+<% end %>
